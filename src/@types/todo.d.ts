@@ -3,7 +3,6 @@ export interface ITodo {
   title: string;
   description: string;
   status: boolean;
-  children?: React.ReactNode;
 }
 
 export type TodoContextType = {
