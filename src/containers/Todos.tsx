@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { TodoContextType, ITodo } from "../@types/todo";
 import { TodoContext } from "../context/todoContext";
-import Todo from "../components/Todo";
+import { Todo } from "../components/";
 
 const Todos = () => {
   const { todos, updateTodo } = useContext(TodoContext) as TodoContextType;

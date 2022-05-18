@@ -1,9 +1,8 @@
 import { useContext, useState } from "react";
 import { TodoContext } from "../context/todoContext";
-import { TodoContextType, ITodo } from "../@types/todo";
-import { FormEvent } from "../@types/event.types";
+import { TodoContextType, ITodo, FormEvent } from "../@types";
 
-const AddTodo = () => {
+export const AddTodo = () => {
   const { saveTodo } = useContext(TodoContext) as TodoContextType;
   const [formData, setFormData] = useState<ITodo | {}>();
   const handleForm = (e: FormEvent): void => {
@@ -30,12 +29,7 @@ const AddTodo = () => {
           <input onChange={handleForm} type="text" id="description" />
         </div>
       </div>
-      <button disabled={formData === undefined ? true : false}>
-        {" "}
-        Add Todo
-      </button>
+      <button disabled={formData === undefined ? true : false}>Add Todo</button>
     </form>
   );
 };
-
-export default AddTodo;

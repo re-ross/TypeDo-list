@@ -1,9 +1,8 @@
 import { useContext } from "react";
-import { ChangeEvent } from "../@types/event.types";
-import { ThemeContextType, Theme } from "../@types/theme";
+import { ThemeContextType, Theme, ChangeEvent } from "../@types";
 import { ThemeContext } from "../context/themeContext";
 
-const ThemeWrapper = ({ children }: { children: React.ReactNode }) => {
+export const ThemeWrapper = ({ children }: { children: React.ReactNode }) => {
   const { theme, changeTheme } = useContext(ThemeContext) as ThemeContextType;
   const handleThemeChange = (e: ChangeEvent) => {
     changeTheme(e.target.value as Theme);
@@ -19,5 +18,3 @@ const ThemeWrapper = ({ children }: { children: React.ReactNode }) => {
     </div>
   );
 };
-
-export default ThemeWrapper;

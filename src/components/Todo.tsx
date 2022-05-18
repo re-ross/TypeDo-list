@@ -1,11 +1,11 @@
-import { ITodo } from "../@types/todo";
+import { ITodo } from "../@types";
 
 type Props = {
   todo: ITodo;
   updateTodo: (id: number) => void;
 };
 
-const Todo = ({ todo, updateTodo }: Props) => {
+export const Todo = ({ todo, updateTodo }: Props) => {
   const checkTodo: string = todo.status ? `line-through` : "";
 
   return (
@@ -23,4 +23,3 @@ const Todo = ({ todo, updateTodo }: Props) => {
     </div>
   );
 };
-export default Todo;

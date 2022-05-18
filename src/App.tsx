@@ -1,9 +1,7 @@
-import TodoProvider from "./context/todoContext";
-import ThemeProvider from "./context/themeContext";
 import Todos from "./containers/Todos";
+import { ThemeProvider, TodoProvider } from "./context";
+import { ThemeWrapper, AddTodo } from "./components";
 import "./styles.css";
-import AddTodo from "./components/AddTodo";
-import ThemeWrapper from "./components/ThemeWrapper";
 
 const App = () => {
   return (

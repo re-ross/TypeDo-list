@@ -1,9 +1,9 @@
 import { useState, createContext } from "react";
-import { TodoContextType, ITodo } from "../@types/todo";
+import { TodoContextType, ITodo } from "../@types";
 
 export const TodoContext = createContext<TodoContextType | null>(null);
 
-const TodoProvider = ({ children }: { children: React.ReactNode }) => {
+export const TodoProvider = ({ children }: { children: React.ReactNode }) => {
   const [todos, setTodos] = useState<ITodo[]>([
     {
       id: 1,
@@ -21,7 +21,7 @@ const TodoProvider = ({ children }: { children: React.ReactNode }) => {
 
   const saveTodo = (todo: ITodo) => {
     const newTodo: ITodo = {
-      id: Math.random(), // not really unique - but fine for this example
+      id: Math.random(),
       title: todo.title,
       description: todo.description,
       status: false,
@@ -44,5 +44,3 @@ const TodoProvider = ({ children }: { children: React.ReactNode }) => {
     </TodoContext.Provider>
   );
 };
-
-export default TodoProvider;
