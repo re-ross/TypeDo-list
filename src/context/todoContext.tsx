@@ -1,11 +1,10 @@
-import * as React from "react";
-
+import { useState, createContext } from "react";
 import { TodoContextType, ITodo } from "../@types/todo";
 
-export const TodoContext = React.createContext<TodoContextType | null>(null);
+export const TodoContext = createContext<TodoContextType | null>(null);
 
-export const TodoProvider = ({ children }: { children: React.ReactNode }) => {
-  const [todos, setTodos] = React.useState<ITodo[]>([
+const TodoProvider = ({ children }: { children: React.ReactNode }) => {
+  const [todos, setTodos] = useState<ITodo[]>([
     {
       id: 1,
       title: "post 1",
