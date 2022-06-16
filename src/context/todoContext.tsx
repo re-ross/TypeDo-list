@@ -35,6 +35,7 @@ export const TodoProvider = ({ children }: { children: React.ReactNode }) => {
         todo.status = true;
         setTodos([...todos]);
       }
+      return todos;
     });
   };
 
